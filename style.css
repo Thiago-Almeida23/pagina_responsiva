@@ -1,0 +1,316 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #e7e9ed;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #3c5ef5;
+    color: #fff;
+    padding: 10px;
+    overflow: hidden;
+}
+
+header h1 {
+    margin: 0;
+    font-style: italic;
+    margin-left: 100px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    margin-right: 100px;
+}
+
+nav ul li:not(:last-child) {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#sobre {
+    padding-top: 20px;
+}
+
+.sobre-imagem {
+    width: 50%;
+    float: left;
+    margin-bottom: 20px;
+}
+
+.sobre-imagem img {
+    width: 80%;
+    float: right;
+    padding: 0 20px;
+}
+
+.sobre-texto {
+    width: 50%;
+    float: left;
+    padding: 0 40px;
+    position: relative;
+}
+
+.sobre-texto h2 {
+    margin-top: 0;
+    color: #3c5ef5;
+    position: relative;
+    z-index: 1;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.sobre-texto p {
+    padding-top: 20px;
+    font-size: 15px;
+    text-align: justify;
+}
+
+.sobre-texto::after {
+    content: '';
+    display: block;
+    width: 89%;
+    height: 2px;
+    background-color: #3c5ef5;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    z-index: 0;
+}
+
+#produtos {
+    clear: both;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative; /* Adicionado position: relative; para referência absoluta */
+}
+
+#produtos h2 {
+    color: #3c5ef5;
+    position: relative; 
+    z-index: 1;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    font-style: italic;
+    font-weight: bold;
+    padding: 10px;
+}
+
+#produtos::before { 
+    content: '';
+    display: block;
+    width: 96%; 
+    height: 2px;
+    background-color: #3c5ef5;
+    position: absolute;
+    top: 70px;
+    left: 20px;
+}
+
+#produtos .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.produto {
+    width: calc(25% - 20px);
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.produto img {
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+
+.produto h3, .produto p {
+    flex: 1;
+    text-align: left; 
+}
+
+.produto h3 {
+    font-size: 18px;
+    padding-bottom: 5px;
+}
+
+.produto p {
+    font-size: 12px;
+    padding-bottom: 10px;
+}
+
+.produto button {
+    background-color: #3c5ef5;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 900;
+    border: none;
+    border-radius: 4px;
+    height: 25px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1023px) {
+
+    header {
+        display: flex;
+        align-items: center; /* Alinhar verticalmente */
+        justify-content: space-between; /* Distribuir o espaço entre os elementos */
+        background-color: #3c5ef5;
+        color: #fff;
+        padding-left: 42px;
+        overflow: hidden;
+    }
+    
+    header h1 {
+        margin: 0;
+        font-style: italic;
+    }
+    
+    nav {
+        width: 50%; /* Definir a largura do nav */
+    }
+    
+    nav ul {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end; /* Alinhar à direita */
+        margin: 0; /* Remover margens padrão */
+        padding-right: 30px; /* Remover padding padrão */
+    }
+    
+
+    .sobre .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Alinha os itens verticalmente */
+    }
+
+    .sobre-imagem {
+        width: 100%; /* A imagem ocupará toda a largura disponível */
+        display: flex; /* Usar flexbox */
+        justify-content: center; /* Alinhar a imagem horizontalmente */
+    }
+
+    .sobre-imagem img {
+        width: calc(100% + 40px); /* Ajustar a largura da imagem para 100% + margem */
+        max-width: none; /* Remover a restrição da largura máxima */
+        height: auto; /* Altura ajustada automaticamente */
+    }
+
+    .sobre-texto {
+        width: 100%;
+        text-align: center; /* Centralizar texto horizontalmente */
+        margin: 20px 0; /* Adicionar margem superior e inferior */
+    }
+
+    .sobre-texto h2 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+
+    .sobre-texto::after {
+        content: '';
+        display: block;
+        width: 94%;
+        height: 2px;
+        background-color: #3c5ef5;
+        position: absolute;
+        top: 45px;
+        left: 40px;
+    }
+
+    .sobre-texto p {
+        font-size: 1em; /* Tamanho de fonte padrão para o texto */
+        margin-bottom: 20px; /* Espaçamento inferior para o texto */
+    }
+
+    /* Estilos para a seção "Produtos" */
+    .produtos .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Centralizar os produtos horizontalmente */
+        align-items: flex-start; /* Alinhar os produtos no topo */
+    }
+
+    .produto {
+        width: calc(50% - 20px);
+        margin: 10px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .produto img {
+        width: 100%;
+        max-width: 100%; /* Garantir que a imagem não ultrapasse as dimensões da div */
+        margin-bottom: 10px;
+    }
+
+    .produto h3 {
+        width: 100%;
+        font-size: 1em; /* Tamanho de fonte igual à fonte do elemento pai */
+        margin-bottom: 0.5em; /* Espaçamento inferior proporcional à fonte do elemento pai */
+        text-align: left;
+    }
+
+    .produto p {
+        font-size: 0.8em; /* Tamanho de fonte menor que a fonte do elemento pai */
+        margin-bottom: 1em; /* Espaçamento inferior proporcional à fonte do elemento pai */
+        text-align: left;
+    }
+
+    .produto button {
+        width: 100%; /* Definir largura do botão em rem */
+        font-size: 0.8em; /* Tamanho de fonte menor que a fonte do elemento pai */
+        height: 2.5em; /* Altura do botão em unidades fixas */
+    }
+}
+
+@media screen and (max-width: 640px) {
+    main {
+        padding-top: 20px; /* Adiciona um espaçamento superior para compensar a falta do cabeçalho */
+    }
+
+    #produtos h2 {
+        display: block; /* Mostra o título "Produtos" em telas menores */
+        text-align: center; /* Centraliza o texto */
+        margin-bottom: 20px; /* Adiciona espaçamento inferior */
+    }
+
+    .produto {
+        width: 100%; /* Define a largura para ocupar toda a largura disponível */
+        margin: 0 auto 20px; /* Adiciona margem inferior e centraliza horizontalmente */
+    }
+}
+
